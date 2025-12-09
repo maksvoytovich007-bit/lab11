@@ -12,7 +12,7 @@ class V1 extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => ConfigModel(),
       child: Scaffold(
-        appBar: AppBar(title: const Text('Shape Configurator')),
+        appBar: AppBar(title: const Text('Flutter Demo Home Page')),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
