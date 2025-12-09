@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'provider/config_provider.dart'; // Імпортуємо ConfigModel
-import 'widgets/sliders_sections.dart'; // Імпортуємо файл, що містить SlidersWidget
+import 'provider/config_provider.dart';
+import 'widgets/sliders_sections.dart';
 import 'widgets/red_container_preview.dart';
 
 class V1 extends StatelessWidget {
@@ -9,18 +9,15 @@ class V1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Тут ми обгортаємо наш вміст у ChangeNotifierProvider.
-    // Зверніть увагу: я виправив `ConfigProvider()` на `ConfigModel()` відповідно до назви вашого класу.
     return ChangeNotifierProvider(
       create: (_) => ConfigModel(),
       child: Scaffold(
-        appBar: AppBar(title: const Text('Flutter Demo Home Page')),
+        appBar: AppBar(title: const Text('Shape Configurator')),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
               SizedBox(height: 20),
-
               SlidersWidget(),
               SizedBox(height: 30),
               RedContainerPreview(),

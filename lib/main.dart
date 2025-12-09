@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Provider Demo',
+      title: 'Provider Configurator',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: const V1(),
     );

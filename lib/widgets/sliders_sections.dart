@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../provider/config_provider.dart'; // Імпорт ConfigModel
+import '../provider/config_provider.dart';
 
-// 1. Віджет для одного слайдера (як у вашому оригіналі)
 class SliderSection extends StatelessWidget {
   final String label;
   final double min;
@@ -25,7 +24,6 @@ class SliderSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Використовуємо Consumer тут, щоб оновлювати лише текст, коли значення змінюється
           Text('$label: ${currentValue.toStringAsFixed(2)}'),
           Slider(
             value: currentValue,
@@ -40,16 +38,13 @@ class SliderSection extends StatelessWidget {
 }
 
 
-// 2. Віджет, який об'єднує всі слайдери (для використання в ConfigurationScreen або V1)
 class SlidersWidget extends StatelessWidget {
   const SlidersWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Використовуємо Provider.of для доступу до методів set (які не викликають перебудови)
     final config = Provider.of<ConfigModel>(context, listen: false);
 
-    // Використовуємо Consumer для отримання актуальних значень, які відображаються у слайдерах
     return Consumer<ConfigModel>(
         builder: (context, configProvider, child) {
           return Column(
